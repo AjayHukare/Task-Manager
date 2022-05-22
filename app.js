@@ -1,3 +1,5 @@
+//after doing npm start search for http://localhost:3000/ on browset to see the app
+
 const express = require('express')
 const app = express()
 const tasks = require('./routes/tasks')
@@ -24,9 +26,12 @@ app.use(errorHandlerMiddleware)
 
 const port = process.env.PORT || 3000
 
+const url = "mongodb+srv://Aj:Ajgokudbz123@nodeandexpress.cfmzl.mongodb.net/?retryWrites=true&w=majority"
+
 const start = async ()=>{
     try{
-        await connectDB(process.env.MONGO_URI)
+        // await connectDB(process.env.MONGO_URI)
+        await connectDB(url)
         app.listen(port,console.log(`server is listening on port ${port}...`))
     }
     catch (error){

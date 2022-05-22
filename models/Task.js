@@ -7,7 +7,7 @@
         type: String,
         required:[true,'must provide name'],
         trim:true,
-        maxlength:[20, 'name cant exceed 20 chars']
+        maxlength:[60, 'name cant exceed 20 chars']
      },
      completed:{
          type:Boolean,
